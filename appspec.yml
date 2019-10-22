@@ -1,0 +1,52 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /var/app/current/
+
+permissions:
+  - object: /var/app/current/
+    pattern: "**"
+    owner: apache
+    group: apache
+    # mode: 644
+    type:
+      - file
+  - object: /var/app/current/
+    pattern: "**"
+    owner: apache
+    group: apache
+    # mode: 755
+    type:
+      - directory
+
+hooks:
+  ApplicationStop:
+    - location: scripts/stop_server.sh
+      timeout: 60
+      runas: root
+  BeforeInstall:
+    # - location: scripts/install_dependencies.sh
+    #   timeout: 300
+    #   runas: root
+    - location: scripts/stop_supervisord.sh
+      timeout: 60
+      runas: root
+  AfterInstall:
+    # - location: scripts/switch_version.sh
+    #   timeout: 60
+    #   runas: root
+    - location: scripts/deploy_laravel.sh
+      timeout: 300
+      runas: root
+    - location: scripts/install_supervisord.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 90
+      runas: root
+    - location: scripts/start_supervisord.sh
+      timeout: 60
+      runas: root

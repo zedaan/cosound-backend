@@ -1,0 +1,28 @@
+1. create transformer for each different pages
+
+2. add the folder structure for in transformers
+	Like:
+	> Transformers (folder)
+		> Marketplace (folder)
+			> Service (folder)
+				> IndexTransformer.php (contains all the data)
+				> CartTransformer.php (custom)
+				> CardTransformer.php (custom)
+				> OfferedTransformer.php  (custom)(user)
+				> PurchasedTransformer.php (custom)(owner)
+
+3. Maintain your code to look-alike in all class and function
+
+4. All models should use direct relation with each other; meaning I dont want to access third model from first model query
+
+5. Remove the bulk (ie. relations) from User model; it is getting heavy 
+
+6. Start using the Model::query in controller; dont use eager/lazy loading over from user
+
+7. All the media files should go through uploads/medias table & upload_id/media_id should exist in the data that has media
+	Like:
+		"image" in "services" should have "upload_id", and "featured_image" json field should have array of "upload_ids"
+
+8. Try to create helper functions for each job
+
+9. Compress each media files

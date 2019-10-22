@@ -1,0 +1,68 @@
+// Fonts
+@import "fonts";
+@import url("https://fonts.googleapis.com/css?family=Chewy");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: #fff;
+  color: #636b6f;
+}
+
+.navbar-laravel {
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+.logo {
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+}
+.shadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+.bold {
+  font-weight: bold;
+}
+.logo-abs {
+  position: absolute;
+  top: 16%;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+.grey {
+  color: #636b6f;
+}
+.full-height {
+  height: 100vh;
+}
+.btn {
+  background-color: #d90000 !important;
+}
+.m-t-1 {
+  margin-top: 10px;
+}
+.m-t-5 {
+  margin-top: 50px;
+}
+.cosound-font {
+  font-family: "Chewy", cursive;
+  font-weight: 100;
+}
